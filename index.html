@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 平台情報 — 實驗站</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>AI 平台情報</h1>
+  <p class="tagline">每日核實的 AI / LLM 免費層情報：額度、條款、綁卡要求與變更追蹤。每條紀錄附官方出處與核實日期。</p>
+  <p class="meta">實驗站 v0 ｜ 最後更新：<span id="site-updated"></span> ｜ 規則：官方未明言的綁卡狀態一律標「未明言」，不作已核實講法</p>
+  <div class="stats">
+    <div class="stat"><span id="stat-cards">–</span><label>已收錄卡片</label></div>
+    <div class="stat"><span id="stat-batches">–</span><label>已核實批次</label></div>
+    <div class="stat"><span id="stat-archive">–</span><label>歷史資源（抽取中）</label></div>
+  </div>
+</header>
+
+<main>
+  <section id="cards-section">
+    <h2>資源卡片庫</h2>
+    <div class="filters">
+      <input type="search" id="search" placeholder="搜尋服務／類別…">
+      <select id="category-filter"><option value="">全部類別</option></select>
+      <select id="card-filter">
+        <option value="">綁卡：全部</option>
+        <option value="nocard">明言不需綁卡</option>
+        <option value="unstated">官方未明言</option>
+      </select>
+    </div>
+    <div id="cards" class="cards"></div>
+    <p id="archive-note" class="note"></p>
+  </section>
+
+  <section id="timeline-section">
+    <h2>變化時間線</h2>
+    <ul id="timeline" class="timeline"></ul>
+  </section>
+
+  <section id="digest-section">
+    <h2>情報摘要</h2>
+    <div id="digests"></div>
+  </section>
+</main>
+
+<footer>
+  <p>實驗性質：本站為期約兩週的內容實驗，數據來自每日官方頁核實；如與官方最新頁面有出入，以官方為準並以核實日期判斷新舊。</p>
+  <p>姊妹站：<a href="https://museforwork.github.io/free-stack-lab/">Free Stack Lab</a></p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

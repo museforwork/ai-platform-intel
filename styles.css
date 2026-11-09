@@ -1,0 +1,33 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, "Segoe UI", "Noto Sans TC", sans-serif; background: #0f1420; color: #e8ecf3; line-height: 1.6; }
+header { padding: 2.5rem 1.25rem 1.5rem; max-width: 960px; margin: 0 auto; }
+h1 { margin: 0 0 .5rem; font-size: 2rem; }
+.tagline { color: #aeb9cc; max-width: 46rem; }
+.meta { color: #7e8aa3; font-size: .85rem; }
+.stats { display: flex; gap: 1rem; margin-top: 1.25rem; flex-wrap: wrap; }
+.stat { background: #182036; border: 1px solid #26314d; border-radius: 10px; padding: .75rem 1.25rem; min-width: 9rem; }
+.stat span { display: block; font-size: 1.5rem; font-weight: 700; color: #7fd1ff; }
+.stat label { font-size: .8rem; color: #aeb9cc; }
+main { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 2rem; }
+section { margin-top: 2.25rem; }
+h2 { border-bottom: 2px solid #26314d; padding-bottom: .4rem; }
+.filters { display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.filters input, .filters select { background: #182036; color: #e8ecf3; border: 1px solid #26314d; border-radius: 8px; padding: .5rem .7rem; font-size: .95rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+.card { background: #182036; border: 1px solid #26314d; border-radius: 12px; padding: 1rem 1.1rem; }
+.card h3 { margin: 0 0 .2rem; font-size: 1.1rem; }
+.card .vendor { color: #7e8aa3; font-size: .85rem; margin-bottom: .5rem; }
+.card .badge { display: inline-block; background: #233257; color: #7fd1ff; border-radius: 999px; padding: .05rem .6rem; font-size: .75rem; margin-right: .4rem; }
+.card .badge.warn { background: #4d3a23; color: #ffcf7f; }
+.card p { margin: .45rem 0; font-size: .92rem; }
+.card .src { font-size: .8rem; color: #7e8aa3; }
+.card a { color: #7fd1ff; }
+.note { color: #7e8aa3; font-size: .88rem; }
+.timeline { list-style: none; padding: 0; }
+.timeline li { border-left: 3px solid #26314d; padding: .3rem 0 .8rem 1rem; margin-left: .3rem; }
+.timeline .t-date { color: #7fd1ff; font-weight: 600; margin-right: .5rem; }
+.timeline .t-type { background: #233257; border-radius: 999px; padding: .05rem .6rem; font-size: .75rem; margin-right: .5rem; }
+.digest { background: #182036; border: 1px solid #26314d; border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: 1rem; }
+.digest h3 { margin-top: 0; }
+footer { max-width: 960px; margin: 0 auto; padding: 1rem 1.25rem 2.5rem; color: #7e8aa3; font-size: .85rem; }
+footer a { color: #7fd1ff; }
