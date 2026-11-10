@@ -1,9 +1,42 @@
 // AI 平台情報 — 實驗站數據
 // 規則：每條必備 source_url + observed_date；綁卡官方未明言一律標 unstated，不升級講法。
 // 來源：每日免費資源批次（官方頁當日核實）＋公開平台變更事件。只出公開情報，不出自家帳號細節。
-const SITE_UPDATED = "2026-11-09";
+const SITE_UPDATED = "2026-11-10";
 
 const CARDS = [
+  {
+    service: "Sentry Developer",
+    vendor: "Sentry",
+    category: "應用監控",
+    free: "$0 永久免費，限 1 人、專案不限；每月 5,000 errors、5M spans、50 replays、5GB Logs、1GB Attachments、5GB Application Metrics；含 Agent tracing 與 MCP monitoring、30 天保留",
+    card: "官方未明言（unstated）",
+    note: "新用戶前 3 個月每月另享 5,000 次 Replays 優惠；14 天無限用量試用後自動轉免費",
+    source_url: "https://sentry.io/pricing",
+    observed_date: "2026-11-10",
+    batch: 28
+  },
+  {
+    service: "Streamlit Community Cloud",
+    vendor: "Streamlit",
+    category: "AI 應用託管",
+    free: "免費託管 Python AI／數據應用；每應用 CPU 0.078–2 核、記憶體 690MB–2.7GB、儲存上限 50GB；12 小時無流量休眠，私人應用一次 1 個",
+    card: "官方未明言（unstated）",
+    note: "限額數字為 2024-02 舊數，官方註明可隨時變更；註冊流程無付款步驟，但未明言不需信用卡",
+    source_url: "https://docs.streamlit.io/deploy/streamlit-community-cloud",
+    observed_date: "2026-11-10",
+    batch: 28
+  },
+  {
+    service: "Railway Trial",
+    vendor: "Railway",
+    category: "雲端部署",
+    free: "30 天試用、一次性 $5 credits；試用上限每服務 1 vCPU／0.5GB RAM、0.5GB volume 儲存",
+    card: "不需綁卡（FAQ 明言）",
+    note: "試用非永久免費層；Hobby 為 $5／月訂閱",
+    source_url: "https://railway.com/pricing",
+    observed_date: "2026-11-10",
+    batch: 28
+  },
   {
     service: "Claude Free",
     vendor: "Anthropic",
@@ -41,6 +74,11 @@ const CARDS = [
 
 const TIMELINE = [
   {
+    date: "2026-11-10",
+    type: "新增收錄",
+    text: "第 28 批：Sentry Developer、Streamlit Community Cloud、Railway Trial 三個免費層經官方頁核實入庫。Railway 為 30 天試用、非永久免費層；Sentry 與 Streamlit 綁卡狀態官方未明言。"
+  },
+  {
     date: "2026-11-09",
     type: "新增收錄",
     text: "第 27 批：Claude Free、HeyGen Free、OpusClip Free 三個免費層經官方頁核實入庫。OpusClip 每月 credits 官方未公開，標記待覆核。"
@@ -58,6 +96,11 @@ const TIMELINE = [
 ];
 
 const DIGESTS = [
+  {
+    date: "2026-11-10",
+    title: "AI 免費層情報 — 2026-11-10",
+    body: "今日新核實三個免費層，分屬監控、託管、部署。最實在是 Sentry Developer：$0 永久免費、額度完整，還含 Agent tracing 與 MCP monitoring，直接對上 Agent 監控需求，但定價頁未說明是否需信用卡，標為官方未明言。Streamlit Community Cloud 同樣永久免費託管 Python 應用，惟限額數字是 2024-02 舊數、官方註明可隨時變更。Railway 則不同：FAQ 明言不需綁卡，卻只是 30 天試用、一次性 $5 credits，並非永久免費層。"
+  },
   {
     date: "2026-11-09",
     title: "AI 免費層情報 — 2026-11-09",
