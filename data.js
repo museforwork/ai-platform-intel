@@ -1,9 +1,42 @@
 // AI 平台情報 — 實驗站數據
 // 規則：每條必備 source_url + observed_date；綁卡官方未明言一律標 unstated，不升級講法。
 // 來源：每日免費資源批次（官方頁當日核實）＋公開平台變更事件。只出公開情報，不出自家帳號細節。
-const SITE_UPDATED = "2026-11-10";
+const SITE_UPDATED = "2026-11-11";
 
 const CARDS = [
+  {
+    service: "Fathom Free",
+    vendor: "Fathom",
+    category: "AI 會議記錄",
+    free: "$0；錄影、轉錄與儲存無上限；進階摘要每月僅限前 5 通，之後改用通用模板；新帳號有 30 天 Premium 預覽",
+    card: "官方未明言（unstated）",
+    note: "進階摘要限制出自說明中心「Free vs Premium」文章；定價頁未明言是否需信用卡",
+    source_url: "https://fathom.ai/pricing",
+    observed_date: "2026-11-11",
+    batch: 29
+  },
+  {
+    service: "ImageKit Forever Free",
+    vendor: "ImageKit",
+    category: "圖片／影片最佳化",
+    free: "$0；每月頻寬 20 GB、DAM 儲存 3 GB、VPU 500、Extension Units 650、2 位使用者；每月 1 日重置",
+    card: "官方未明言（unstated）",
+    note: "定價頁未明言是否需信用卡",
+    source_url: "https://imagekit.io/plans/",
+    observed_date: "2026-11-11",
+    batch: 29
+  },
+  {
+    service: "PostHog Free",
+    vendor: "PostHog",
+    category: "產品分析",
+    free: "$0；官方明言「No credit card, not a trial」；每月分析 100 萬事件、Session Replay 網頁 5,000／手機 2,500 錄製、Feature Flags 100 萬請求、錯誤追蹤 100,000 例外、問卷 1,500 回覆、Logs 10 GB；每月重置、未用不累積、超量即停",
+    card: "不需綁卡（定價頁明言）",
+    note: "多產品免費額度獨立計算，超量即停、無意外帳單",
+    source_url: "https://posthog.com/pricing",
+    observed_date: "2026-11-11",
+    batch: 29
+  },
   {
     service: "Sentry Developer",
     vendor: "Sentry",
@@ -74,6 +107,16 @@ const CARDS = [
 
 const TIMELINE = [
   {
+    date: "2026-11-11",
+    type: "新增收錄",
+    text: "第 29 批：Fathom Free、ImageKit Forever Free、PostHog Free 三個免費層經官方頁核實入庫。PostHog 官方明言不需綁卡且非試用；Fathom 與 ImageKit 綁卡狀態官方未明言。"
+  },
+  {
+    date: "2026-11-11",
+    type: "觀察",
+    text: "xAI（Grok）API 免費額度已結束——官方文件現為預付制，舊 $25／月 beta 贈金與 $150／月資料分享計畫已結束，故由收錄名單剔除。DataStax Astra DB 暫緩：官方確認 Free 方案結構，但未公布額度數字，待官方頁可讀時再驗。"
+  },
+  {
     date: "2026-11-10",
     type: "新增收錄",
     text: "第 28 批：Sentry Developer、Streamlit Community Cloud、Railway Trial 三個免費層經官方頁核實入庫。Railway 為 30 天試用、非永久免費層；Sentry 與 Streamlit 綁卡狀態官方未明言。"
@@ -96,6 +139,11 @@ const TIMELINE = [
 ];
 
 const DIGESTS = [
+  {
+    date: "2026-11-11",
+    title: "AI 免費層情報 — 2026-11-11",
+    body: "今日新核實三個免費層，橫跨會議、媒體與產品分析。最值得先試 PostHog Free：官方明言「No credit card, not a trial」，額度獨立計算，超量即停、不怕意外帳單。Fathom Free 錄影、轉錄與儲存無上限，但進階摘要每月只限前 5 通。ImageKit 每月 20 GB 頻寬、3 GB 儲存；惟 Fathom 與 ImageKit 定價頁均未明言是否需信用卡。"
+  },
   {
     date: "2026-11-10",
     title: "AI 免費層情報 — 2026-11-10",
