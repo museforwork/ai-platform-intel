@@ -1,7 +1,7 @@
 (function () {
   document.getElementById("site-updated").textContent = SITE_UPDATED;
   document.getElementById("stat-cards").textContent = CARDS.length;
-  document.getElementById("stat-batches").textContent = 29;
+  document.getElementById("stat-batches").textContent = 30;
   document.getElementById("stat-archive").textContent = ARCHIVE.resources;
   document.getElementById("archive-note").textContent =
     "歷史批次：第 " + ARCHIVE.range + " 共 " + ARCHIVE.batches + " 批、" + ARCHIVE.resources +
