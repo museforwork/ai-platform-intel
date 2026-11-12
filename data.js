@@ -1,9 +1,42 @@
 // AI 平台情報 — 實驗站數據
 // 規則：每條必備 source_url + observed_date；綁卡官方未明言一律標 unstated，不升級講法。
 // 來源：每日免費資源批次（官方頁當日核實）＋公開平台變更事件。只出公開情報，不出自家帳號細節。
-const SITE_UPDATED = "2026-11-11";
+const SITE_UPDATED = "2026-11-12";
 
 const CARDS = [
+  {
+    service: "Weaviate Cloud Free",
+    vendor: "Weaviate",
+    category: "向量資料庫",
+    free: "$0；永久免費；每位使用者 1 個叢集、上限 10 萬物件、1 GB 記憶體、10 GB 磁碟；Embeddings 2,000 次／天、Query Agent 1,000 次／月；支援混合搜尋、多租戶、RBAC",
+    card: "不需綁卡（定價頁明言）",
+    note: "定價頁 Free 欄明言「No credit card required」；免費層含 Embeddings 與 Query Agent，但僅 1 個 collection、可用性 best effort",
+    source_url: "https://weaviate.io/pricing",
+    observed_date: "2026-11-12",
+    batch: 30
+  },
+  {
+    service: "Zapier Free",
+    vendor: "Zapier",
+    category: "自動化",
+    free: "$0；每月 100 tasks；Zap 僅限兩步、Zap／Tables／Forms 數量不限；MCP 每次工具呼叫扣 2 tasks；含 Zapier Copilot；新帳號另享 14 天 Professional 試用",
+    card: "官方未明言（unstated）",
+    note: "達上限會自動切按量付費，免費使用須先關閉；Free 方案本身未明言是否需卡，僅 14 天 Pro 試用明言免卡",
+    source_url: "https://zapier.com/pricing",
+    observed_date: "2026-11-12",
+    batch: 30
+  },
+  {
+    service: "Deno Deploy Free",
+    vendor: "Deno",
+    category: "邊緣託管",
+    free: "$0；每月 100 萬請求、20 GiB 流量、10 小時 Active CPU；KV 1 GiB 儲存、每月 100 萬讀／50 萬寫；10 個 App、5 個自訂網域；日誌保留 1 天",
+    card: "官方未明言（unstated）",
+    note: "定價頁全文無信用卡相關說明；閒置約 20–30 秒後歸零",
+    source_url: "https://deno.com/deploy/pricing",
+    observed_date: "2026-11-12",
+    batch: 30
+  },
   {
     service: "Fathom Free",
     vendor: "Fathom",
@@ -107,6 +140,16 @@ const CARDS = [
 
 const TIMELINE = [
   {
+    date: "2026-11-12",
+    type: "新增收錄",
+    text: "第 30 批：Weaviate Cloud Free、Zapier Free、Deno Deploy Free 三個免費層經官方頁核實入庫。Weaviate 定價頁明言不需綁卡；Zapier 與 Deno Deploy 綁卡狀態官方未明言。Zapier 達上限會自動切按量付費，免費使用須先關閉。"
+  },
+  {
+    date: "2026-11-12",
+    type: "觀察",
+    text: "PlanetScale 官方定價頁已無免費層（舊 Hobby 免費層不在頁上），故不收錄；DataStax Astra DB 繼續暫緩——datastax.com/pricing 已轉為 IBM watsonx.data 定價頁，無 Astra 免費額度數字。"
+  },
+  {
     date: "2026-11-11",
     type: "新增收錄",
     text: "第 29 批：Fathom Free、ImageKit Forever Free、PostHog Free 三個免費層經官方頁核實入庫。PostHog 官方明言不需綁卡且非試用；Fathom 與 ImageKit 綁卡狀態官方未明言。"
@@ -139,6 +182,11 @@ const TIMELINE = [
 ];
 
 const DIGESTS = [
+  {
+    date: "2026-11-12",
+    title: "AI 免費層情報 — 2026-11-12",
+    body: "今日新核實三個免費層。最值得先試 Weaviate Cloud Free：定價頁明言不需綁卡，免費層已含 Embeddings 與 Query Agent。Zapier Free 每月 100 個 tasks，可經 MCP 呼叫 9,000+ 個 App，惟達上限會自動切按量付費，須先關閉。Deno Deploy Free 每月 100 萬請求加內建 KV 額度；惟兩者未明言是否需信用卡。"
+  },
   {
     date: "2026-11-11",
     title: "AI 免費層情報 — 2026-11-11",
