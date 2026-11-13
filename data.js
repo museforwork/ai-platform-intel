@@ -1,9 +1,42 @@
 // AI 平台情報 — 實驗站數據
 // 規則：每條必備 source_url + observed_date；綁卡官方未明言一律標 unstated，不升級講法。
 // 來源：每日免費資源批次（官方頁當日核實）＋公開平台變更事件。只出公開情報，不出自家帳號細節。
-const SITE_UPDATED = "2026-11-12";
+const SITE_UPDATED = "2026-11-13";
 
 const CARDS = [
+  {
+    service: "Fireflies.ai Free",
+    vendor: "Fireflies.ai",
+    category: "AI 會議記錄",
+    free: "$0；Free forever：轉錄不限次數、AI 摘要有限、400 分鐘儲存／團隊、20 AI credits；支援 Zoom／Google Meet／Teams 等 10+ 平台、100+ 語言轉錄、即時筆記、會議搜尋、AskFred AI 助理",
+    card: "官方未明言（unstated）",
+    note: "定價頁明言「No AI training on your content」——不用會議內容訓練模型，客戶保留資料完整所有權；定價頁未明言是否需信用卡",
+    source_url: "https://fireflies.ai/pricing",
+    observed_date: "2026-11-13",
+    batch: 31
+  },
+  {
+    service: "Gladia",
+    vendor: "Gladia",
+    category: "語音轉文字 API",
+    free: "新帳號 €50 免費額度，效期 1 年；約等於 Solaria-3 非同步轉錄 312 小時、Solaria-1 185 小時、即時轉錄 73 小時；用完後預付儲值繼續，無訂閱；100+ 語言、說話人分離、自訂詞彙",
+    card: "官方未明言（unstated）",
+    note: "Self-serve 預設選擇加入模型訓練，可隨時免費在個人檔案選擇退出；定價頁未明言是否需信用卡",
+    source_url: "https://www.gladia.io/pricing",
+    observed_date: "2026-11-13",
+    batch: 31
+  },
+  {
+    service: "Krea Free",
+    vendor: "Krea",
+    category: "AI 圖像／影片生成",
+    free: "$0；每日運算額度、每日自動補充；按模型計（Krea 3 約 5 張／天、Krea 1 約 18 張／天、Flux.1 Dev 約 30 張／天等）；即時生成 900 張／天、編輯 33 張／天、3D 模型 2 個／天",
+    card: "官方未明言（unstated）",
+    note: "免費層無商用授權（FAQ 明言，商用授權僅 Basic 以上付費方案有）；定價頁未明言是否需信用卡",
+    source_url: "https://www.krea.ai/pricing",
+    observed_date: "2026-11-13",
+    batch: 31
+  },
   {
     service: "Weaviate Cloud Free",
     vendor: "Weaviate",
@@ -140,6 +173,11 @@ const CARDS = [
 
 const TIMELINE = [
   {
+    date: "2026-11-13",
+    type: "新增收錄",
+    text: "第 31 批：Fireflies.ai Free、Gladia、Krea Free 三個免費層經官方頁核實入庫。三者綁卡狀態官方均未明言。Fireflies 定價頁明言不用會議內容訓練模型；Gladia €50 額度效期 1 年，但 Self-serve 預設加入模型訓練、可免費退出；Krea 免費層無商用授權。"
+  },
+  {
     date: "2026-11-12",
     type: "新增收錄",
     text: "第 30 批：Weaviate Cloud Free、Zapier Free、Deno Deploy Free 三個免費層經官方頁核實入庫。Weaviate 定價頁明言不需綁卡；Zapier 與 Deno Deploy 綁卡狀態官方未明言。Zapier 達上限會自動切按量付費，免費使用須先關閉。"
@@ -182,6 +220,11 @@ const TIMELINE = [
 ];
 
 const DIGESTS = [
+  {
+    date: "2026-11-13",
+    title: "AI 免費層情報 — 2026-11-13",
+    body: "今日新核實三個免費層，分屬會議記錄、語音轉文字與圖像生成。最值得留意的是三者的取捨各不相同：Fireflies.ai Free 轉錄不限次數，但儲存上限 400 分鐘／團隊，定價頁明言不用會議內容訓練模型，私隱承諾最明確。Gladia 新帳號有 €50 免費額度、效期 1 年，約等於 312 小時轉錄，惟 Self-serve 預設加入模型訓練，須手動退出。Krea Free 單一帳號聚合數十個模型、每日額度按模型分別計算，但免費層無商用授權。三者定價頁均未明言是否需信用卡。"
+  },
   {
     date: "2026-11-12",
     title: "AI 免費層情報 — 2026-11-12",
