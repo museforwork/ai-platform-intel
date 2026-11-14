@@ -1,9 +1,42 @@
 // AI 平台情報 — 實驗站數據
 // 規則：每條必備 source_url + observed_date；綁卡官方未明言一律標 unstated，不升級講法。
 // 來源：每日免費資源批次（官方頁當日核實）＋公開平台變更事件。只出公開情報，不出自家帳號細節。
-const SITE_UPDATED = "2026-11-13";
+const SITE_UPDATED = "2026-11-14";
 
 const CARDS = [
+  {
+    service: "Magnific Free",
+    vendor: "Magnific",
+    category: "AI 圖像生成",
+    free: "$0；每日最多 20 次 AI 生圖（僅自家模型）、每日 10 次圖庫下載；僅限個人使用、全數內容須署名、無商用授權；不可加購點數；目前不提供免費試用",
+    card: "官方未明言（unstated）",
+    note: "定價頁與說明文件均未提及是否需信用卡；付費方案標示「No model training on your data」，免費層說明文件未提及資料訓練",
+    source_url: "https://www.magnific.com/ai/docs/plans-and-pricing",
+    observed_date: "2026-11-14",
+    batch: 32
+  },
+  {
+    service: "Fliki Free",
+    vendor: "Fliki",
+    category: "文字轉影片",
+    free: "$0；Free forever：每月 3 credits（約 5 分鐘內容）；300 個標準聲音、80+ 語言；由文字／腳本／部落格／PPT 生成影片、圖庫素材、AI 生圖與縮圖；匯出最長 5 分鐘、720p、含 Fliki 浮水印；無商用授權、無 API",
+    card: "不需綁卡（定價頁明言）",
+    note: "定價頁明言「No credit card required」；credits 按生成音訊時長扣（0.5 credits／分鐘起，依功能而異）",
+    source_url: "https://fliki.ai/pricing",
+    observed_date: "2026-11-14",
+    batch: 32
+  },
+  {
+    service: "Auphonic Free",
+    vendor: "Auphonic",
+    category: "AI 音訊後製",
+    free: "$0；每月免費處理 2 小時音訊，每月重設、未用不累積；含全部 AI 音訊演算法（音量平衡、降噪、響度規格）、API 存取與 CLI；不含多語言語音辨識、自動 shownotes 與章節、Watch folders、批次製作",
+    card: "官方未明言（unstated）",
+    note: "免費產出附 Auphonic jingle；定價頁未明言是否需信用卡、商用限制或資料訓練用途",
+    source_url: "https://auphonic.com/pricing",
+    observed_date: "2026-11-14",
+    batch: 32
+  },
   {
     service: "Fireflies.ai Free",
     vendor: "Fireflies.ai",
@@ -173,6 +206,16 @@ const CARDS = [
 
 const TIMELINE = [
   {
+    date: "2026-11-14",
+    type: "新增收錄",
+    text: "第 32 批：Magnific Free、Fliki Free、Auphonic Free 三個免費層經官方頁核實入庫。Fliki 定價頁明言不需綁卡；Magnific 與 Auphonic 綁卡狀態官方未明言。Magnific 每日 20 次生圖加每日 10 次圖庫下載、僅限個人使用須署名；Auphonic 每月 2 小時音訊後製含 API，產出附 jingle；Fliki 每月 3 credits 約 5 分鐘內容，無商用授權。"
+  },
+  {
+    date: "2026-11-14",
+    type: "觀察",
+    text: "PlayHT 定價頁連續第三次未能核實——play.ht 與 www.play.ht 兩域名皆 DNS 無法解析，暫緩待網域恢復後再查；Kapwing、Hailuo AI、Copy.ai 定價頁本批亦未能核實。"
+  },
+  {
     date: "2026-11-13",
     type: "新增收錄",
     text: "第 31 批：Fireflies.ai Free、Gladia、Krea Free 三個免費層經官方頁核實入庫。三者綁卡狀態官方均未明言。Fireflies 定價頁明言不用會議內容訓練模型；Gladia €50 額度效期 1 年，但 Self-serve 預設加入模型訓練、可免費退出；Krea 免費層無商用授權。"
@@ -220,6 +263,11 @@ const TIMELINE = [
 ];
 
 const DIGESTS = [
+  {
+    date: "2026-11-14",
+    title: "AI 免費層情報 — 2026-11-14",
+    body: "今日新核實三個免費層。最值得先試 Auphonic Free：每月 2 小時音訊後製，含全部演算法與 API，每月重設，代價是產出附 jingle，且未明言是否需信用卡。Magnific Free 每日 20 次生圖加 10 次圖庫下載，額度最即時可用，但僅限個人使用、須署名、無商用授權。Fliki Free 是三者唯一明言不需綁卡，每月 3 credits 約 5 分鐘內容，但額度最小、匯出含浮水印且無商用授權。"
+  },
   {
     date: "2026-11-13",
     title: "AI 免費層情報 — 2026-11-13",
