@@ -1,9 +1,42 @@
 // AI 平台情報 — 實驗站數據
 // 規則：每條必備 source_url + observed_date；綁卡官方未明言一律標 unstated，不升級講法。
 // 來源：每日免費資源批次（官方頁當日核實）＋公開平台變更事件。只出公開情報，不出自家帳號細節。
-const SITE_UPDATED = "2026-11-14";
+const SITE_UPDATED = "2026-11-15";
 
 const CARDS = [
+  {
+    service: "Grafana Cloud Free",
+    vendor: "Grafana",
+    category: "基礎設施可觀測性",
+    free: "$0；每項產品皆 Always $0：Metrics 每月 10k active series、Logs／Traces／Profiles 各每月 50 GB 匯入、保留期 14 天；Agent Observability 每月 30k generations＋25M tokens；Grafana Assistant 每月 3 位 AI users（每人 40M tokens）；另含 Kubernetes Monitoring、Frontend Observability、Synthetics、k6 免費額度",
+    card: "不需綁卡（定價頁明言）",
+    note: "定價頁明言「No credit card required」；同類已交付 Langfuse、LangSmith、W&B、Sentry、PostHog；Grafana 不同在基礎設施級遙測加專為 AI Agent 設的 Agent Observability",
+    source_url: "https://grafana.com/pricing/",
+    observed_date: "2026-11-15",
+    batch: 33
+  },
+  {
+    service: "TinyPNG Free",
+    vendor: "TinyPNG",
+    category: "圖片壓縮",
+    free: "$0；每月首 500 次圖片壓縮免費、每月重設；超過後按量計費（每月 10,000 次以內每次 $0.009、以上每次 $0.002），無訂閱費、無最低消費；支援 AVIF／JPEG XL／WebP／JPEG／PNG 壓縮、縮放與轉檔",
+    card: "不需綁卡（定價頁明言）",
+    note: "開發者頁明言「No payment method required」；填姓名與電郵即可取 API key；圖片類已交付多為生成與管理，TinyPNG 做壓縮／最佳化而非生成",
+    source_url: "https://tinypng.com/developers",
+    observed_date: "2026-11-15",
+    batch: 33
+  },
+  {
+    service: "Auth0 Free",
+    vendor: "Auth0",
+    category: "身分認證",
+    free: "$0／月；每月最多 25,000 MAU；含 Passwordless、無限 Social Connections、Passkeys、5 個 Organizations、Token Vault 2 個、Auth for MCP、Secure Agentic AI workflows；Log Retention 1 天、1 個 tenant",
+    card: "不需綁卡（定價頁明言）",
+    note: "定價頁明言「No credit card needed to sign up」；注意：自訂網域需信用卡驗證；認證類已交付 Clerk，Auth0 不同在含 Auth for MCP 與 Token Vault 等 AI Agent 身分功能",
+    source_url: "https://auth0.com/pricing",
+    observed_date: "2026-11-15",
+    batch: 33
+  },
   {
     service: "Magnific Free",
     vendor: "Magnific",
@@ -206,6 +239,16 @@ const CARDS = [
 
 const TIMELINE = [
   {
+    date: "2026-11-15",
+    type: "新增收錄",
+    text: "第 33 批：Grafana Cloud Free、TinyPNG Free、Auth0 Free 三個免費層經官方頁核實入庫。三者定價頁均明言不需綁卡。Grafana 每項產品皆 Always $0，含專為 AI Agent 設的 Agent Observability（每月 30k generations）；TinyPNG 每月首 500 次壓縮免費；Auth0 每月 25,000 MAU，含 Auth for MCP 與 Token Vault，但自訂網域需信用卡驗證。"
+  },
+  {
+    date: "2026-11-15",
+    type: "觀察",
+    text: "SendGrid 永久免費方案已不存在——官方定價頁現只提供「Free Trial」：$0／月、60 天、每天 100 封，FAQ 明言不需綁卡；60 天限時試用、非永久免費層，故不收錄。永久免費郵件 API 仍以 Resend 為已交付選項。"
+  },
+  {
     date: "2026-11-14",
     type: "新增收錄",
     text: "第 32 批：Magnific Free、Fliki Free、Auphonic Free 三個免費層經官方頁核實入庫。Fliki 定價頁明言不需綁卡；Magnific 與 Auphonic 綁卡狀態官方未明言。Magnific 每日 20 次生圖加每日 10 次圖庫下載、僅限個人使用須署名；Auphonic 每月 2 小時音訊後製含 API，產出附 jingle；Fliki 每月 3 credits 約 5 分鐘內容，無商用授權。"
@@ -263,6 +306,11 @@ const TIMELINE = [
 ];
 
 const DIGESTS = [
+  {
+    date: "2026-11-15",
+    title: "AI 免費層情報 — 2026-11-15",
+    body: "今日三個免費層定價頁都明言不需綁卡。最值得先試 Grafana Cloud Free：基礎設施可觀測性每項皆 Always $0，另有 Agent Observability（每月 30k generations），額度最完整，惟保留期只有 14 天。TinyPNG Free 每月首 500 次圖片壓縮免費。Auth0 Free 每月 25,000 MAU，含 Auth for MCP 與 Token Vault，惟自訂網域需信用卡驗證。"
+  },
   {
     date: "2026-11-14",
     title: "AI 免費層情報 — 2026-11-14",
