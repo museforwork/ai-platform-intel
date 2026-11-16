@@ -1,9 +1,42 @@
 // AI 平台情報 — 實驗站數據
 // 規則：每條必備 source_url + observed_date；綁卡官方未明言一律標 unstated，不升級講法。
 // 來源：每日免費資源批次（官方頁當日核實）＋公開平台變更事件。只出公開情報，不出自家帳號細節。
-const SITE_UPDATED = "2026-11-15";
+const SITE_UPDATED = "2026-11-16";
 
 const CARDS = [
+  {
+    service: "OCR.space Free OCR API",
+    vendor: "OCR.space",
+    category: "OCR 文字辨識",
+    free: "$0；每月 25,000 次請求、每 IP 每天 500 次上限；檔案上限 1 MB、PDF 最多 3 頁；可產生帶浮水印的可搜尋 PDF；支援 PNG／JPG／GIF／TIF／BMP 與 PDF，Engine 2 預設自動偵測語言（33 種語言，含中日韓）；免費版無 SLA",
+    card: "官方未明言（unstated）",
+    note: "填電郵即可取免費 API key，頁面無付款步驟；文件／OCR 類為首次交付；定價頁未明言是否需信用卡、商用限制或資料訓練用途",
+    source_url: "https://ocr.space/ocrapi",
+    observed_date: "2026-11-16",
+    batch: 34
+  },
+  {
+    service: "Mailjet Free",
+    vendor: "Mailjet",
+    category: "郵件 API",
+    free: "$0／月；每月 6,000 封、每天上限 200 封；1,000 個聯絡人；含 API、SMTP Relay、Webhooks、進階郵件編輯器、基本統計、表單建立器、郵件追蹤同意；未用完額度不 rollover",
+    card: "不需綁卡（FAQ 明言）",
+    note: "FAQ 明言「no credit card required for the free plan at sign up」；注意：超出額度仍可寄、但會按量計費；郵件 API 類已交付 Resend（每月 3,000 封、每天 100 封），Mailjet 額度較大",
+    source_url: "https://www.mailjet.com/pricing/",
+    observed_date: "2026-11-16",
+    batch: 34
+  },
+  {
+    service: "ScrapingBee 免費 credits",
+    vendor: "ScrapingBee",
+    category: "網頁抓取 API",
+    free: "$0；一次性 1,000 免費 API credits、無常駐免費方案；基本請求每筆 1 點起、JS 渲染成功請求每筆 5 點、Premium 代理每筆 10 或 25 點（視 JS 渲染而定）；含 JS 渲染、代理、截圖",
+    card: "不需綁卡（定價頁明言）",
+    note: "定價頁明言「No credit card required」；頁面未對免費額度寫明重設或到期日；抓取類已交付 Tavily、Exa、Firecrawl、Apify，ScrapingBee 不同在是一次性額度、無每月重設",
+    source_url: "https://www.scrapingbee.com/pricing/",
+    observed_date: "2026-11-16",
+    batch: 34
+  },
   {
     service: "Grafana Cloud Free",
     vendor: "Grafana",
@@ -239,6 +272,16 @@ const CARDS = [
 
 const TIMELINE = [
   {
+    date: "2026-11-16",
+    type: "新增收錄",
+    text: "第 34 批：OCR.space Free OCR API、Mailjet Free、ScrapingBee 免費 credits 三個免費層經官方頁核實入庫。Mailjet 與 ScrapingBee 定價頁均明言不需綁卡；OCR.space 綁卡狀態官方未明言。Mailjet 每月 6,000 封、每天 200 封，額度是已交付 Resend 的兩倍；ScrapingBee 為一次性 1,000 點、無常駐免費方案；OCR.space 每月 25,000 次請求，為本站首個 OCR 資源。"
+  },
+  {
+    date: "2026-11-16",
+    type: "觀察",
+    text: "PlayHT 定價頁已恢復核實——現行官方定價頁為 playht.co/pricing（舊 play.ht 域名多次 DNS 無法解析）。Starter $0／月永久免費、明言不需綁卡，每月 10,000 credits、含 1 個語音複製名額，但免費層無 API access；第 34 批已滿，留待下批收錄。"
+  },
+  {
     date: "2026-11-15",
     type: "新增收錄",
     text: "第 33 批：Grafana Cloud Free、TinyPNG Free、Auth0 Free 三個免費層經官方頁核實入庫。三者定價頁均明言不需綁卡。Grafana 每項產品皆 Always $0，含專為 AI Agent 設的 Agent Observability（每月 30k generations）；TinyPNG 每月首 500 次壓縮免費；Auth0 每月 25,000 MAU，含 Auth for MCP 與 Token Vault，但自訂網域需信用卡驗證。"
@@ -306,6 +349,11 @@ const TIMELINE = [
 ];
 
 const DIGESTS = [
+  {
+    date: "2026-11-16",
+    title: "AI 免費層情報 — 2026-11-16",
+    body: "今日新核實三個免費層，分屬 OCR、郵件與網頁抓取。最值得先試 Mailjet Free：每月 6,000 封、每天 200 封，FAQ 明言不需綁卡，額度是已交付 Resend 的兩倍，惟超量會直接按量計費。ScrapingBee 一次性 1,000 免費 credits、明言不需綁卡，但無常駐免費方案、額度用完即止。OCR.space Free 每月 25,000 次請求，惟檔案上限 1 MB、PDF 最多 3 頁，且綁卡狀態官方未明言。"
+  },
   {
     date: "2026-11-15",
     title: "AI 免費層情報 — 2026-11-15",
