@@ -1,9 +1,42 @@
 // AI 平台情報 — 實驗站數據
 // 規則：每條必備 source_url + observed_date；綁卡官方未明言一律標 unstated，不升級講法。
 // 來源：每日免費資源批次（官方頁當日核實）＋公開平台變更事件。只出公開情報，不出自家帳號細節。
-const SITE_UPDATED = "2026-11-16";
+const SITE_UPDATED = "2026-11-17";
 
 const CARDS = [
+  {
+    service: "PlayHT Starter",
+    vendor: "PlayHT",
+    category: "AI 語音生成",
+    free: "$0／月，永久免費；每月 10,000 credits（1 字元 = 1 credit，每月重設、不 rollover）；含 1 個語音複製名額、1 team seat、MP3 輸出、30 chars/sec 即時生成；不含 API access、WAV 輸出、Voice library",
+    card: "不需綁卡（FAQ 明言）",
+    note: "FAQ 明言「The Starter plan is free forever with no credit card required」；原 play.ht 域名無法解析，現行官方定價頁為 playht.co/pricing；語音類已交付 ElevenLabs、Deepgram、AssemblyAI、Cartesia、Gladia、Murf AI，PlayHT 不同在含 1 個語音複製名額且明言不需綁卡，但免費層無 API access（Agent 串接須付費方案）",
+    source_url: "https://playht.co/pricing",
+    observed_date: "2026-11-17",
+    batch: 35
+  },
+  {
+    service: "Brevo Free",
+    vendor: "Brevo",
+    category: "郵件 API",
+    free: "$0／月，Free forever；每日 300 封（行銷＋交易郵件合計）；聯絡人上限 100,000 名（多管道行銷自動化在 Free 限 2,000 名聯絡人）；含行銷郵件、自動化、CRM、交易郵件",
+    card: "不需綁卡（定價頁明言）",
+    note: "定價頁橫幅明言「Free forever, no credit card needed」；FAQ 明言註冊只需電郵與組織名稱、不需信用卡資料；帳號須經 Brevo 批准才能開始寄送；頁面未另外公布每月總數，不可將每日 300 封乘天數推算；郵件類已交付 Resend（每月 3,000 封）與 Mailjet（每月 6,000 封），Brevo 每日 300 封為三者最高",
+    source_url: "https://www.brevo.com/pricing/",
+    observed_date: "2026-11-17",
+    batch: 35
+  },
+  {
+    service: "LlamaParse Pay as you go",
+    vendor: "LlamaParse",
+    category: "文件解析 API",
+    free: "$0／月、無訂閱；每月 10,000 免費 credits、每月重設、不結轉；Parse 每頁：Fast 1／Cost-effective 3／Agentic 10／Agentic Plus 25 credits，免費額度約可解析 10,000 頁 Fast 或約 3,333 頁 Cost-effective；另含 Extract／Classify／Split／Index；5 個並行 Parse／Extract jobs",
+    card: "官方未明言（unstated）",
+    note: "官方文件顯示付款資料只在升級 Pro 或購買 credit pack 時才要求，免費額度本身推斷不需綁卡（推斷，非官方明言）；額度用完新工作暫停（回 402）、等每月重設或購買 credits，不會自動扣款；另有官方 LlamaParse Platform MCP server；文件類已交付 OCR.space，LlamaParse 不同在做 Agentic 文件解析（複雜版面、表格、圖表、手寫轉結構化 Markdown／JSON，專為 RAG 餵資料）",
+    source_url: "https://developers.llamaindex.ai/llamaparse/general/billing/",
+    observed_date: "2026-11-17",
+    batch: 35
+  },
   {
     service: "OCR.space Free OCR API",
     vendor: "OCR.space",
@@ -272,6 +305,11 @@ const CARDS = [
 
 const TIMELINE = [
   {
+    date: "2026-11-17",
+    type: "新增收錄",
+    text: "第 35 批：PlayHT Starter、Brevo Free、LlamaParse Pay as you go 三個免費層經官方頁核實入庫。PlayHT 與 Brevo 均明言不需綁卡；LlamaParse 綁卡狀態官方未明言（文件顯示付款資料只在升級或購買 credits 時才要求）。LlamaParse 每月 10,000 免費 credits、約 3,333 頁 Cost-effective 解析，附官方 MCP server，最貼合 RAG／Agent 資料管線；Brevo 每日 300 封為已交付郵件類三者最高，惟帳號須經批准才能寄送；PlayHT 每月 10,000 credits 含 1 個語音複製名額，但免費層無 API access。"
+  },
+  {
     date: "2026-11-16",
     type: "新增收錄",
     text: "第 34 批：OCR.space Free OCR API、Mailjet Free、ScrapingBee 免費 credits 三個免費層經官方頁核實入庫。Mailjet 與 ScrapingBee 定價頁均明言不需綁卡；OCR.space 綁卡狀態官方未明言。Mailjet 每月 6,000 封、每天 200 封，額度是已交付 Resend 的兩倍；ScrapingBee 為一次性 1,000 點、無常駐免費方案；OCR.space 每月 25,000 次請求，為本站首個 OCR 資源。"
@@ -349,6 +387,11 @@ const TIMELINE = [
 ];
 
 const DIGESTS = [
+  {
+    date: "2026-11-17",
+    title: "AI 免費層情報 — 2026-11-17",
+    body: "今日新核實三個免費層，分屬語音生成、郵件與文件解析。最值得先試 LlamaParse：每月 10,000 免費 credits、約 3,333 頁 Cost-effective 解析，額度用完只暫停不扣款，且附官方 MCP server，直接接上 RAG／Agent 資料管線，惟綁卡狀態官方未明言。Brevo Free 每日 300 封、聯絡人上限 10 萬名，定價頁明言不需綁卡，額度為已交付郵件類最高，但帳號須經批准才能寄送。PlayHT Starter 每月 10,000 credits、含 1 個語音複製名額，FAQ 明言不需綁卡，代價是免費層無 API access。"
+  },
   {
     date: "2026-11-16",
     title: "AI 免費層情報 — 2026-11-16",
