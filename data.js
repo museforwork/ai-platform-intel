@@ -1,9 +1,42 @@
 // AI 平台情報 — 實驗站數據
 // 規則：每條必備 source_url + observed_date；綁卡官方未明言一律標 unstated，不升級講法。
 // 來源：每日免費資源批次（官方頁當日核實）＋公開平台變更事件。只出公開情報，不出自家帳號細節。
-const SITE_UPDATED = "2026-11-17";
+const SITE_UPDATED = "2026-11-18";
 
 const CARDS = [
+  {
+    service: "Microsoft Clarity",
+    vendor: "Microsoft",
+    category: "網站行為分析",
+    free: "$0／月，永久免費、無流量上限、無付費版；Session Recordings、Heatmaps、Copilot in Clarity（heatmap／session insights、dashboard 數據問答）；技術上限：每專案每天最多 100,000 個錄製 sessions、每張 heatmap 最多 100,000 次 page views；錄影保留 30 天（收藏／隨機抽樣最長 9 個月）",
+    card: "不需綁卡（FAQ 明言）",
+    note: "FAQ 原文「Clarity is a free service forever. You never encounter traffic limits or are compelled to upgrade to a paid version」——根本無付費版、無升級壓力；安裝只需在網站 <head> 加一段追蹤碼，支援 WordPress、Shopify、Google Tag Manager；數據存於 Microsoft Azure；惟 Terms of Use 頁當日未能開啟、全文未核實；不得用於針對 18 歲以下使用者的網站／App；EEA、英國、瑞士流量自 2025-10-31 起須傳送使用者同意訊號；行為／產品分析類已交付 PostHog、Grafana Cloud，Clarity 不同在完全免費、無流量上限，主打訪客行為錄影＋熱圖＋AI 摘要，適合直接裝在 GitHub Pages 站看訪客實際怎麼用",
+    source_url: "https://learn.microsoft.com/en-us/clarity/faq",
+    observed_date: "2026-11-18",
+    batch: 36
+  },
+  {
+    service: "Neo4j AuraDB Free",
+    vendor: "Neo4j",
+    category: "圖資料庫",
+    free: "$0，永久免費層（學習、原型、小專案）；每帳號僅 1 個 Free instance；上限 200,000 nodes、400,000 relationships、1 GB storage；Aura API 25 requests／分鐘；無法手動暫停，72 小時無活動自動暫停、暫停逾 30 天即刪除、資料全數遺失；Free 無 SLA、無自動備份",
+    card: "不需綁卡（定價頁明言）",
+    note: "定價頁明言「No credit card required」；配額頁原文「AuraDB Free: A perpetual free tier for learning, prototyping, and small projects」——永久免費層，非 14 天試用（試用是另開的 $150 credits 測 Professional／Business Critical 14 天）；備份說法兩處並列：定價比較表 Free 欄標「Not Included」，配額頁則稱 On-demand、一次保留 1 個備份；資料庫類已交付 Supabase、Neon、Turso、MongoDB Atlas、Firebase、Convex、Appwrite、Upstash，Neo4j 不同在是圖資料庫（Cypher、節點＋關係），適合知識圖譜／GraphRAG 的關係建模，長期存資料須自己備份匯出",
+    source_url: "https://neo4j.com/pricing/",
+    observed_date: "2026-11-18",
+    batch: 36
+  },
+  {
+    service: "Cal.com Individuals",
+    vendor: "Cal.com",
+    category: "預約排程",
+    free: "$0／月、Free forever；1 位使用者；無限 event types（links）、無限行事曆連結、無限 meetings；Email & SMS 通知；100+ app 整合；Mobile App、Browser Extension；可收 Stripe & PayPal 款項；Salesforce & HubSpot 雙向同步；一鍵匯入 Calendly events",
+    card: "官方未明言（unstated）",
+    note: "定價頁明言「Start scheduling for free, with no usage limits」，比較表標示「Free forever」；定價頁未明言綁卡、資料訓練用途、商用限制或電話／年齡／地區條件；排程類首次交付，與已交付的自動化類（Zapier、Make、n8n）不同，Cal.com 是專做「對外預約」而非流程自動化，免費版無用量上限是最大特點；團隊功能（round-robin、routing forms、booking analytics、去品牌、API）須 Teams $12／人／月起",
+    source_url: "https://cal.com/pricing",
+    observed_date: "2026-11-18",
+    batch: 36
+  },
   {
     service: "PlayHT Starter",
     vendor: "PlayHT",
@@ -305,6 +338,16 @@ const CARDS = [
 
 const TIMELINE = [
   {
+    date: "2026-11-18",
+    type: "新增收錄",
+    text: "第 36 批：Microsoft Clarity、Neo4j AuraDB Free、Cal.com Individuals 三個免費層經官方頁核實入庫。Clarity 與 Neo4j 定價頁／FAQ 均明言不需綁卡；Cal.com 綁卡狀態官方未明言。Clarity 永久免費、無流量上限、無付費版，錄影＋熱圖＋Copilot 摘要，最適合直接裝在現有 GitHub Pages 站看訪客行為，惟 Terms of Use 全文當日未能開啟、未核實。Neo4j 每帳號 1 個 Free instance、20 萬 nodes／40 萬 relationships、1 GB 儲存，72 小時無活動自動暫停、暫停逾 30 天刪庫，備份說法兩處並列須註明。Cal.com 免費版無用量上限，1 人、無限 links／行事曆／meetings、100+ 整合，為本站首個排程類資源。"
+  },
+  {
+    date: "2026-11-18",
+    type: "觀察",
+    text: "Gemini CLI 個人免費路線已終止——Google 2026-05-19 公告明言 2026-06-18 起停止 Gemini CLI 的免費 Code Assist for individuals，後繼者為已交付的 Antigravity CLI；官方 quota 頁仍列 1,000 requests／天為舊表殘留。Qwen Code 的 Qwen OAuth 免費層亦已於 2026-04-15 終止，CLI 本身免費開源但模型須自備付費方案。DeepInfra 官方定價頁明言須加卡或預付、無新帳戶免費額度，三者本批均不收錄。"
+  },
+  {
     date: "2026-11-17",
     type: "新增收錄",
     text: "第 35 批：PlayHT Starter、Brevo Free、LlamaParse Pay as you go 三個免費層經官方頁核實入庫。PlayHT 與 Brevo 均明言不需綁卡；LlamaParse 綁卡狀態官方未明言（文件顯示付款資料只在升級或購買 credits 時才要求）。LlamaParse 每月 10,000 免費 credits、約 3,333 頁 Cost-effective 解析，附官方 MCP server，最貼合 RAG／Agent 資料管線；Brevo 每日 300 封為已交付郵件類三者最高，惟帳號須經批准才能寄送；PlayHT 每月 10,000 credits 含 1 個語音複製名額，但免費層無 API access。"
@@ -387,6 +430,11 @@ const TIMELINE = [
 ];
 
 const DIGESTS = [
+  {
+    date: "2026-11-18",
+    title: "AI 免費層情報 — 2026-11-18",
+    body: "今日新核實三個免費層，分屬行為分析、圖資料庫與預約排程。最值得先試 Microsoft Clarity：FAQ 明言永久免費、無流量上限、根本無付費版，錄影＋熱圖＋Copilot 摘要，幾分鐘加一段追蹤碼就能看訪客實際怎麼用，惟 Terms of Use 全文當日未能開啟、未核實。Neo4j AuraDB Free 每帳號 1 個 instance、20 萬 nodes／40 萬 relationships，定價頁明言不需綁卡，適合知識圖譜／GraphRAG 關係建模，但 72 小時無活動自動暫停、暫停逾 30 天刪庫，別把唯一一份資料放上面。Cal.com Individuals 免費版無用量上限、100+ 整合，惟綁卡狀態官方未明言。"
+  },
   {
     date: "2026-11-17",
     title: "AI 免費層情報 — 2026-11-17",
