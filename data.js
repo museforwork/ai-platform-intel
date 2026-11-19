@@ -1,9 +1,42 @@
 // AI 平台情報 — 實驗站數據
 // 規則：每條必備 source_url + observed_date；綁卡官方未明言一律標 unstated，不升級講法。
 // 來源：每日免費資源批次（官方頁當日核實）＋公開平台變更事件。只出公開情報，不出自家帳號細節。
-const SITE_UPDATED = "2026-11-18";
+const SITE_UPDATED = "2026-11-19";
 
 const CARDS = [
+  {
+    service: "Trigger.dev Free",
+    vendor: "Trigger.dev",
+    category: "耐久執行／背景任務",
+    free: "$0／月，每月 $5 usage credits（每月重設）；20 concurrent runs、10 schedules、5 team members、unlimited tasks、Dev＋Prod environments、1-day log retention、1-day query period、10 concurrent Realtime connections；每次 run 另加 $0.000025 invocation fee＋按秒運算費（Micro 0.25 vCPU $0.0000169／秒起）；等 subtask 或 wait 超過 5 秒會 checkpoint，等待期間不計運算費",
+    card: "不需綁卡（定價頁明言）",
+    note: "定價頁明言「No credit card required」；任務無最長執行時間，FAQ 稱有使用者跑超過六個月的 run；支援 Vercel AI SDK 與任何 LLM provider，可串流回應與 tool calls；開源 Apache 2.0、可自架；額度用完須升級先繼續跑；自動化／workflow 類已交付 Make、n8n、Zapier、Composio，Trigger.dev 不同在是 code-first 的耐久執行 runtime（TypeScript 寫 task、無 timeout、crash 後續跑、長時間等待不計費），專為跑長時間 AI agent 而設；但免費額度每月只有 $5，跑量大很快用完；定價頁未明言資料訓練用途、商用限制或電話／年齡／地區條件",
+    source_url: "https://trigger.dev/pricing",
+    observed_date: "2026-11-19",
+    batch: 37
+  },
+  {
+    service: "CrewAI AMP Basic",
+    vendor: "CrewAI",
+    category: "多智能體協作平台",
+    free: "$0；每月 50 次 workflow executions（硬上限、超額即止、無加購、無超額計費）、2 個 automations；含 Studio 視覺編輯器＋AI copilot、GitHub 整合、Tracing、OpenTelemetry、Guardrails、Human-in-the-loop、Cron scheduling、Usage dashboard、Token count、Export as MCP server；社群支援",
+    card: "官方未明言（unstated）",
+    note: "定價頁無任何綁卡字眼，綁卡狀態官方未明言；框架本身 MIT 開源、免費自架無用量上限，AMP 是託管層、按 execution 計費，模型 token 費另計（由模型供應商收）；免費版每月只有 50 次執行、無自助付費升級，超過就要談 Enterprise（SSO、RBAC、PII redaction、VPC 部署）；Agent 平台類已交付 Dify、Botpress，CrewAI 不同在是「多智能體協作」框架的託管版（角色分工的 crew／flow、guardrails、human-in-the-loop、cron 排程）；定價頁未明言資料訓練用途、商用限制或電話／年齡／地區條件",
+    source_url: "https://crewai.com/pricing",
+    observed_date: "2026-11-19",
+    batch: 37
+  },
+  {
+    service: "Pipedream Free",
+    vendor: "Pipedream",
+    category: "整合／MCP 自動化",
+    free: "$0；3,000+ connectors、10,000+ prebuilt tools and triggers、MCP servers、Connect proxy、Custom OAuth clients、Managed auth、Unlimited team members、社群支援；⚠ 僅限開發環境（development only）——比較表顯示 Free 無 Production environment，External users 與 Usage credits 皆標 Development only；要服務真實外部使用者、跑 production 須升級 Startup（10,000 usage credits／月、100 users 起）",
+    card: "不需綁卡（定價頁明言）",
+    note: "定價頁明言「Free, no credit card required」；舊版免費方案（每月 100 credits、3 個 active workflows 等）已不存在，第三方舊數字不要再用；Usage credit 計法：每 30 秒運算 1 credit（Connect API／MCP tool call／proxy 請求皆計）；Free 無公開的每月 credit 數字；自動化類已交付 Make、n8n、Zapier、Composio，Pipedream 不同在 code-first（Node.js／Python／Go 寫 step）、以 MCP server 形式把 3,000+ API 直接交給 agent 呼叫，且 Free 在開發環境功能全開；但免費版不能跑 production，想排程／對外跑自動化就要付費，這點不如 n8n Community Edition（自架免費無上限）；定價頁未明言資料訓練用途、商用限制或電話／年齡／地區條件",
+    source_url: "https://pipedream.com/pricing",
+    observed_date: "2026-11-19",
+    batch: 37
+  },
   {
     service: "Microsoft Clarity",
     vendor: "Microsoft",
@@ -338,6 +371,16 @@ const CARDS = [
 
 const TIMELINE = [
   {
+    date: "2026-11-19",
+    type: "新增收錄",
+    text: "第 37 批：Trigger.dev Free、CrewAI AMP Basic、Pipedream Free 三個免費層經官方頁核實入庫。Trigger.dev 與 Pipedream 定價頁均明言不需綁卡；CrewAI AMP 綁卡狀態官方未明言。Trigger.dev 每月 $5 usage credits、20 concurrent runs，耐久執行＋等待不計費，是三者唯一免費就能跑 production 的；CrewAI AMP 每月 50 次 workflow executions，框架開源可自架；Pipedream Free 3,000+ 連接器＋MCP 開發環境功能全開，但僅限開發環境、不能跑 production。"
+  },
+  {
+    date: "2026-11-19",
+    type: "觀察",
+    text: "Copy.ai 免費方案已不存在——多方核查官方定價頁一致顯示無免費方案（僅 Chat $29／月起與 Enterprise $1,000／月起，另有試用期未公開的「Try for free」按鈕），舊的每月 2,000 字免費方案說法已失效，故不收錄。LangGraph Platform 已改名 LangSmith Deployment，免費 Developer tier 即 2026-10-24 已交付的 LangSmith Developer，無新免費內容。"
+  },
+  {
     date: "2026-11-18",
     type: "新增收錄",
     text: "第 36 批：Microsoft Clarity、Neo4j AuraDB Free、Cal.com Individuals 三個免費層經官方頁核實入庫。Clarity 與 Neo4j 定價頁／FAQ 均明言不需綁卡；Cal.com 綁卡狀態官方未明言。Clarity 永久免費、無流量上限、無付費版，錄影＋熱圖＋Copilot 摘要，最適合直接裝在現有 GitHub Pages 站看訪客行為，惟 Terms of Use 全文當日未能開啟、未核實。Neo4j 每帳號 1 個 Free instance、20 萬 nodes／40 萬 relationships、1 GB 儲存，72 小時無活動自動暫停、暫停逾 30 天刪庫，備份說法兩處並列須註明。Cal.com 免費版無用量上限，1 人、無限 links／行事曆／meetings、100+ 整合，為本站首個排程類資源。"
@@ -430,6 +473,11 @@ const TIMELINE = [
 ];
 
 const DIGESTS = [
+  {
+    date: "2026-11-19",
+    title: "AI 免費層情報 — 2026-11-19",
+    body: "今日新核實三個免費層，都是幫 Agent 長時間做事的工具，但免費的邊界各不相同。最值得先試 Trigger.dev：每月 $5 usage credits、20 concurrent runs，定價頁明言不需綁卡，而且是三者唯一免費就能跑 production 的——耐久執行無 timeout、crash 後可續跑、等待超過 5 秒會 checkpoint 且不計運算費，正好對上長時間 agent，惟額度每月只有 $5，跑量大很快用完。CrewAI AMP Basic 每月 50 次 workflow executions、含 Studio 視覺編輯器、Guardrails 與 Human-in-the-loop，適合試多智能體協作，框架本身開源可自架，但綁卡狀態官方未明言，且免費版無自助升級、超過就要談 Enterprise。Pipedream Free 明言不需綁卡，3,000+ 連接器＋MCP 開發環境功能全開，但僅限開發環境、不能跑 production，舊版每月 100 credits 的免費方案已不存在。"
+  },
   {
     date: "2026-11-18",
     title: "AI 免費層情報 — 2026-11-18",
