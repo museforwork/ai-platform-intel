@@ -1,9 +1,42 @@
 // AI 平台情報 — 實驗站數據
 // 規則：每條必備 source_url + observed_date；綁卡官方未明言一律標 unstated，不升級講法。
 // 來源：每日免費資源批次（官方頁當日核實）＋公開平台變更事件。只出公開情報，不出自家帳號細節。
-const SITE_UPDATED = "2026-11-19";
+const SITE_UPDATED = "2026-11-20";
 
 const CARDS = [
+  {
+    service: "Anthropic API",
+    vendor: "Anthropic",
+    category: "LLM API",
+    free: "$0；新用戶免費 credits 試用 API（金額官方未公開），用完後按量計費、無每月免費額度；模型價（每百萬 tokens）：Haiku 5.5 輸入 $0.10／輸出 $0.50、Sonnet 5.5 $2／$10、Opus 5.5 $4／$20；Batch API 5 折、prompt caching 另有折扣；Token counting endpoint 免費",
+    card: "官方未明言（unstated）",
+    note: "定價頁 FAQ 原文「New users receive free credits to test the API」，金額官方未公開，流傳的 $5 無官方出處、不採用；Privacy Center 明言預設不用商業產品（包括 Anthropic API）的輸入／輸出訓練模型，API 輸入／輸出預設 30 天內刪除；定價頁未明言綁卡、電話驗證、地區資格；LLM API 類已交付 Gemini、Groq、Mistral、OpenRouter、Cohere、Fireworks，Anthropic 不同在是 Claude 原廠 API、訓練條款最明確，但只夠試用；每月另有 1,550 小時免費 code execution container hours（第三方整理引述官方文件，本批未在定價頁逐項核實，僅作參考）；此為 11-19 留待項目，本批已結案",
+    source_url: "https://docs.anthropic.com/en/docs/about-claude/pricing",
+    observed_date: "2026-11-20",
+    batch: 38
+  },
+  {
+    service: "Vercel AI Gateway Free tier",
+    vendor: "Vercel",
+    category: "LLM API 閘道",
+    free: "$0；每月 $5 AI Gateway credits（每月重設）；額度自首次發出 AI Gateway 請求起計；首次購買 credits 即永久轉為付費層、每月免費額度不再適用；免費層只限部分模型、按模型設較低 rate limit，超限回 429；Token 按供應商牌價、零加價、無平台費；BYOK 僅付費層可用",
+    card: "官方未明言（unstated）",
+    note: "定價頁全文無「credit card」字眼，綁卡狀態官方未明言；資料訓練用途、商用限制、電話／年齡／地區條件皆未明言；ZDR 與 disallow prompt training 屬付費層附加功能，免費層未明言可用；LLM API／聚合類已交付 OpenRouter、Fireworks，Vercel AI Gateway 不同在每月固定 $5 credits、可路由多家模型且零加價，但免費額度一買 credits 就永久消失，屬評估用預算而非長期免費層",
+    source_url: "https://vercel.com/docs/ai-gateway/pricing",
+    observed_date: "2026-11-20",
+    batch: 38
+  },
+  {
+    service: "Daytona",
+    vendor: "Daytona",
+    category: "Agent 沙箱／隔離運算",
+    free: "$0；一次性 $200 免費運算額度、無月費無訂閱；按秒計費：vCPU $0.0504／小時、記憶體 $0.0162／GiB／小時、儲存 $0.000108／GiB／小時（首 5 GiB 免費）；Windows 沙箱 $0.0858／vCPU／小時、macOS $0.0082／core／小時；GPU 沙箱 Preemptible 價 RTX 4090 $0.57／小時起、H100 $2.47／小時",
+    card: "不需綁卡（定價頁明言）",
+    note: "定價頁明言「Sign up for a free trial - no credit card required」；免費額度能否用於 GPU 沙箱、到期日、免費層 vCPU／RAM／磁碟上限皆未明言；另有新創方案最高 $50k credits（須申請，非一般免費額度）；注意 2026-11-01 推出的 Daytona 2.0（daytona.com）有自己價目表，本批核實的是原平台 daytona.io 定價頁，2.0 定價未核實；Agent sandbox／運算類已交付 E2B、Modal，Daytona 不同在 $200 一次性額度最大、明言不需綁卡、且有 GPU／Windows／macOS 沙箱，但免費額度用完即按量收費、無每月補充",
+    source_url: "https://www.daytona.io/pricing",
+    observed_date: "2026-11-20",
+    batch: 38
+  },
   {
     service: "Trigger.dev Free",
     vendor: "Trigger.dev",
@@ -371,6 +404,11 @@ const CARDS = [
 
 const TIMELINE = [
   {
+    date: "2026-11-20",
+    type: "新增收錄",
+    text: "第 38 批：Anthropic API、Vercel AI Gateway Free tier、Daytona 三個免費層經官方頁核實入庫。Daytona 定價頁明言不需綁卡；Anthropic API 與 Vercel AI Gateway 綁卡狀態官方未明言。Daytona $200 免費運算額度為已交付 sandbox 類最大，按秒計費、可跑 Windows／macOS／GPU 沙箱，最適合跑 agent 生成程式碼的真原型；Vercel AI Gateway 每月 $5 credits、零加價路由多家模型，但首次購買 credits 即永久失去每月免費額度；Anthropic API 為 Claude 原廠 API，訓練條款最明確（預設不用 API 資料訓練），但免費金額官方未公開、無每月免費額度，僅供試用。本批亦結案 11-19 留待的 Anthropic API 核實。"
+  },
+  {
     date: "2026-11-19",
     type: "新增收錄",
     text: "第 37 批：Trigger.dev Free、CrewAI AMP Basic、Pipedream Free 三個免費層經官方頁核實入庫。Trigger.dev 與 Pipedream 定價頁均明言不需綁卡；CrewAI AMP 綁卡狀態官方未明言。Trigger.dev 每月 $5 usage credits、20 concurrent runs，耐久執行＋等待不計費，是三者唯一免費就能跑 production 的；CrewAI AMP 每月 50 次 workflow executions，框架開源可自架；Pipedream Free 3,000+ 連接器＋MCP 開發環境功能全開，但僅限開發環境、不能跑 production。"
@@ -473,6 +511,11 @@ const TIMELINE = [
 ];
 
 const DIGESTS = [
+  {
+    date: "2026-11-20",
+    title: "AI 免費層情報 — 2026-11-20",
+    body: "今日新核實三個免費層，剛好對上 Agent 開發的三個環節：模型、路由、執行環境。最值得先試 Daytona：定價頁明言不需綁卡，$200 免費運算額度為已交付 sandbox 類最大，按秒計費、毫秒級建立隔離環境，約可跑 1,200 小時的 2 vCPU／4 GiB 沙箱，夠做一個真原型，惟免費額度能否用於 GPU、到期日與資源上限皆未明言。Vercel AI Gateway 每月 $5 credits、零加價路由多家模型，適合長期小量試用，但首次購買 credits 即永久失去每月免費額度，且綁卡狀態官方未明言。Anthropic API 為 Claude 原廠 API，訓練條款三者最乾淨（預設不用 API 資料訓練），但免費金額官方未公開、無每月免費額度，只夠試用。"
+  },
   {
     date: "2026-11-19",
     title: "AI 免費層情報 — 2026-11-19",
