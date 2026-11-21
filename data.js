@@ -1,9 +1,42 @@
 // AI 平台情報 — 實驗站數據
 // 規則：每條必備 source_url + observed_date；綁卡官方未明言一律標 unstated，不升級講法。
 // 來源：每日免費資源批次（官方頁當日核實）＋公開平台變更事件。只出公開情報，不出自家帳號細節。
-const SITE_UPDATED = "2026-11-20";
+const SITE_UPDATED = "2026-11-21";
 
 const CARDS = [
+  {
+    service: "Postman Free",
+    vendor: "Postman",
+    category: "API 開發／測試",
+    free: "$0；個人 API 開發／測試：Postman AI credits 比較表標 50／月（上方方案卡片另寫 100／月，兩數不一致並列）；API monitoring 1,000 requests／團隊／月、Automation Flows 25 credits／月、Calls to Postman API 10,000／月、Total users 1 位；超額後 Free 暫停用量功能至下個計費週期（pay-as-you-go 僅付費方案）；含 MCP Client、Collections、Mock Servers、無限手動 Flows、無限本地效能測試、API documentation、Postman CLI、VS Code extension",
+    card: "官方未明言（unstated）",
+    note: "定價頁全文無「credit card」／「No credit card required」字眼，綁卡狀態官方未明言；資料訓練用途、商用限制、電話／年齡／地區條件皆未明言；API／開發者工具類首次交付，與已交付的自動化類（Zapier、Make、n8n、Pipedream）不同，Postman 是 API 生命週期工具（呼叫、測試、監控、文件、Mock），且含 MCP Client 可直接接 agent；但 Free 只有 1 位使用者、AI 額度小且不可加購",
+    source_url: "https://www.postman.com/pricing",
+    observed_date: "2026-11-21",
+    batch: 39
+  },
+  {
+    service: "HubSpot Free Tools",
+    vendor: "HubSpot",
+    category: "免費 CRM",
+    free: "$0，無時間限制；1,000 個聯絡人（其他標準物件合計上限 1,000 筆記錄）、最多 2 位使用者；電郵行銷每月 2,000 封（附 HubSpot 品牌）、Live chat、會議排程 1 條個人連結（附品牌）；10 個 dashboards、每 dashboard 50 份報告；最多 30 個 landing pages、30 個網站頁面；1 個 blog（100 篇文章、20 位作者、50 個標籤）；Agent Builder 含 Prospecting agent、Data Agent；可接 Gmail／Outlook",
+    card: "官方未明言（unstated）",
+    note: "定價頁未明言綁卡、資料訓練用途、商用限制、電話／年齡／地區條件；免費版多處附 HubSpot 品牌（Live chat、電郵、會議連結、網站頁面）；CRM 類首次交付，與已交付的認證類（Clerk、Auth0）與表單類（Airtable）不同，HubSpot 是以 CRM 為核心資料庫、再疊加行銷／銷售／客服／內容 Hub 的免費工具組，且含 Agent Builder；但聯絡人上限僅 1,000、使用者僅 2 位",
+    source_url: "https://hubspot.com/pricing/crm",
+    observed_date: "2026-11-21",
+    batch: 39
+  },
+  {
+    service: "Tally Free",
+    vendor: "Tally",
+    category: "表單工具",
+    free: "$0；無限表單、無限提交（須遵守 fair usage guidelines）；條件邏輯與計算、防重複提交、密碼保護表單、Answer piping、45+ 語言與 RTL；可收款、收集簽名、檔案上傳（Free 單檔上限 10 MB）；整合 Google Sheets、Notion、Airtable、Zapier、Make、Webhooks；免費版保留 Tally 品牌",
+    card: "官方未明言（unstated）",
+    note: "FAQ 明言 Tally 為比利時（EU）公司、完全遵守 GDPR、表單資料存於歐洲、傳輸與靜態皆加密；資料訓練用途、商用限制、電話／年齡／地區條件皆定價頁未明言，綁卡狀態亦未明言；表單／資料收集類首次交付，與已交付的 Airtable（每 base 1,000 筆記錄）不同，Tally 免費版表單與提交皆無數量上限，適合做 agent 收集回饋／報名的前端；但單檔上傳限 10 MB、無協作與版本歷史，移除品牌須 Pro $24／月起",
+    source_url: "https://tally.so/pricing",
+    observed_date: "2026-11-21",
+    batch: 39
+  },
   {
     service: "Anthropic API",
     vendor: "Anthropic",
@@ -404,6 +437,16 @@ const CARDS = [
 
 const TIMELINE = [
   {
+    date: "2026-11-21",
+    type: "新增收錄",
+    text: "第 39 批：Postman Free、HubSpot Free Tools、Tally Free 三個免費層經官方頁核實入庫。三者定價頁均未明言綁卡狀態。Tally 無限表單與提交、條件邏輯與整合全開，是三者唯一無數量上限的免費額度，最適合做 agent 收集資料的前端，惟單檔上傳限 10 MB、免費版保留品牌；HubSpot 免費 CRM 無時限、1,000 聯絡人／2 使用者，含 Agent Builder，但免費版多處附品牌；Postman 為本站首個 API 開發／測試類資源，含 MCP Client 可直接接 agent，惟 Free 只有 1 位使用者，且 AI credits 額度頁內兩處不一致（比較表 50／月、方案卡片 100／月），兩數並列。"
+  },
+  {
+    date: "2026-11-21",
+    type: "觀察",
+    text: "Tailscale Personal 免費方案本批未能核實——官方定價頁與首頁在瀏覽器多次嘗試皆連線被重設（ERR_CONNECTION_RESET），更換瀏覽器／網路途徑後仍失敗，未取得任何官方內容；未以其他來源代替、不收錄，留待日後重試。"
+  },
+  {
     date: "2026-11-20",
     type: "新增收錄",
     text: "第 38 批：Anthropic API、Vercel AI Gateway Free tier、Daytona 三個免費層經官方頁核實入庫。Daytona 定價頁明言不需綁卡；Anthropic API 與 Vercel AI Gateway 綁卡狀態官方未明言。Daytona $200 免費運算額度為已交付 sandbox 類最大，按秒計費、可跑 Windows／macOS／GPU 沙箱，最適合跑 agent 生成程式碼的真原型；Vercel AI Gateway 每月 $5 credits、零加價路由多家模型，但首次購買 credits 即永久失去每月免費額度；Anthropic API 為 Claude 原廠 API，訓練條款最明確（預設不用 API 資料訓練），但免費金額官方未公開、無每月免費額度，僅供試用。本批亦結案 11-19 留待的 Anthropic API 核實。"
@@ -511,6 +554,11 @@ const TIMELINE = [
 ];
 
 const DIGESTS = [
+  {
+    date: "2026-11-21",
+    title: "AI 免費層情報 — 2026-11-21",
+    body: "今日新核實三個免費層：API 開發、CRM、表單工具。最值得先試 Tally：無限表單與提交、條件邏輯與整合全開，是三者唯一無數量上限的免費額度，做 agent 收集資料的前端零成本，惟單檔上傳限 10 MB。HubSpot 免費 CRM 無時限，1,000 聯絡人／2 使用者，含 Agent Builder，但免費版多處附品牌。Postman 含 MCP Client，惟 AI credits 額度頁內不一致（比較表 50／月、方案卡片 100／月）。三者均未明言是否需綁卡。"
+  },
   {
     date: "2026-11-20",
     title: "AI 免費層情報 — 2026-11-20",
